@@ -1,0 +1,240 @@
+/* Primer paso
+    Reseteamos y vamos de arriba hacia abajo */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* ----------------Header--------------*/
+
+header{
+
+    background-color: blueviolet;
+    color: white;
+
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+header h1 {
+    text-align: center;
+}
+
+header nav ul {
+
+    display: flex;
+    justify-content: space-around;
+}
+
+/* ---------banner-------------------*/
+
+.banner {
+    padding: 20px;
+}
+
+.banner img {
+    width:100%;
+}
+
+.banner-text {
+    height: 30vh;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*--------- Section Proyectos ------------------*/
+
+.proyectos h2{
+    text-align:center;
+    background-color: blueviolet;
+    color:white;
+
+    padding: 20px;
+}
+
+.contenedor-proyectos{
+    padding: 20px;
+
+    display: flex;
+    overflow-x: scroll;
+
+}
+
+.card-proyecto{
+
+    border: 2px solid black;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* con min para que respete el minimo
+    en el futuro al se hijo en wrap lo deformaria sino */
+    min-width: 250px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.card-proyecto a{
+
+    border: solid 2px black;
+    border-radius: 10px;
+
+    background-color: darkmagenta;
+    color: white;
+
+    padding: 5px 10px;
+}
+
+.card-proyecto img {
+
+    width:100%;
+}
+
+/*-----------------Section Tecnologias --------------*/
+
+.tecnologias h2{
+    text-align: center;
+    background-color: blueviolet;
+    color: white;
+    padding: 10px;
+}
+
+/* --------------Section Redes sociales -----------*/
+.redes-sociales h2{
+
+    text-align: center;
+    background-color: blueviolet;
+    color: white;
+    padding: 10px;
+}
+
+.contenedor-redes{
+
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor-redes i {
+ 
+    font-size: 4rem;
+    color:brown;
+
+}
+
+@media(min-width: 1024px) {
+
+    /* quiero mantener el h1 a la izquierda y la nav 
+    la derecha */
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header nav {
+        width: 40%;
+    }
+
+    /* tercer paso Hacemos el main */
+    /* --------main----------------*/
+    main {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) 20vh;
+        grid-template-rows:repeat(3, 1fr);
+        grid-template-areas: 
+        "banner banner banner"
+        "proyectos proyectos redes"
+        "tecnologias tecnologias redes";
+    }
+
+    /* -------Banner---------*/
+    .banner{
+        display:flex;
+        grid-area: banner;
+    }
+
+    .banner img{
+        width: 50%;
+    }
+
+    .banner-texto{
+        font-size: 1.5rem;
+        text-align: start;
+    }
+
+
+    /* ---------Proyectos-------------*/
+    .proyectos{
+        grid-area: proyectos;
+    }
+    .contenedor-proyectos{
+    justify-content: space-around;
+    overflow-x: hidden;
+    }
+
+    /* ---------Tecnonolgias-----------*/
+    .tecnologias{
+        grid-area: tecnologias;
+    }
+
+    /*------------Redes Sociales----------*/
+    .redes-sociales{
+        grid-area: redes;
+    }
+
+    .contenedor-redes{
+        flex-direction: column;
+        align-items:center;
+        height: 100%;
+    }
+
+}
+
+.tecnologias p{
+    padding: 20;
+}
+
+
+/* body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cajita{
+
+    width: 200px;
+    height:200px;
+    background-color: red;
+    border: 2px solid black;
+}
+
+@media(min-width: 480px ){
+
+    .cajita{
+        background-color: aqua;
+    }
+
+} */
